@@ -27,7 +27,10 @@ jobs:
     - name: Install dependencies
       run: conan install .
     - name: configure, build, test and create project
-      run: conan create  .
+      run: conan create .
+    - name: login to artifactory
+      if: github.event_name == 'release'
+      run: conan user github -p -r=jothepro-conan-public
     - name: upload to artifactory
       if: github.event_name == 'release'
-      run: conan upload mylibrary -r jothepro-conan-public --confirm
+      run: conan upload mylibrary -r=jothepro-conan-public --confirm
