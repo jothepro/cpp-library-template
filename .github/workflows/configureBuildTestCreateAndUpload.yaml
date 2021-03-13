@@ -30,7 +30,7 @@ jobs:
       run: conan create .
     - name: login to artifactory
       if: github.event_name == 'release'
-      run: conan user github -p -r=jothepro-conan-public
+      run: conan user github -p ${{ env.CONAN_PASSWORD }} -r=jothepro-conan-public
     - name: upload to artifactory
       if: github.event_name == 'release'
       run: conan upload mylibrary -r=jothepro-conan-public --confirm
