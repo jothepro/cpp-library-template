@@ -35,4 +35,4 @@ jobs:
         CONAN_PASSWORD: ${{ secrets.CONAN_PASSWORD }}
     - name: upload to artifactory
       if: github.event_name == 'release'
-      run: conan upload mylibrary -r=jothepro-conan-public --confirm
+      run: conan upload mylibrary -r=jothepro-conan-public --all --confirm
