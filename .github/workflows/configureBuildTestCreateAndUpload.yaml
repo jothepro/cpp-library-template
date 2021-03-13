@@ -28,11 +28,9 @@ jobs:
       run: conan install .
     - name: configure, build, test and create project
       run: conan create .
-    - name: login to artifactory
-      if: github.event_name == 'release'
-      run: conan user github -p -r=jothepro-conan-public
-      env:
-        CONAN_PASSWORD: ${{ secrets.CONAN_PASSWORD }}
     - name: upload to artifactory
       if: github.event_name == 'release'
       run: conan upload mylibrary -r=jothepro-conan-public --all --confirm
+      env:
+        CONAN_LOGIN_USERNAME: ${{ secrets.CONAN_LOGIN_USERNAME }}
+        CONAN_PASSWORD: ${{ secrets.CONAN_PASSWORD }}
