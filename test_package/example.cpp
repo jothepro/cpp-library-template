@@ -5,5 +5,5 @@ using namespace MyLibrary;
 
 int main() {
     auto example = std::make_shared<Example>();
-    example->test();
+    example->test("test");
 }
