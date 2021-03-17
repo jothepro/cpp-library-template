@@ -10,7 +10,7 @@ SCENARIO("MyLibrary testing", "[test]") {
         auto example = std::make_shared<Example>();
 
         WHEN("calling test()") {
-            auto result = example->test();
+            auto result = example->test("test");
             THEN("result should contain a test json") {
                 REQUIRE(!result.empty());
             }
