@@ -3,3 +3,4 @@ build
 cmake-build-*
 .idea
 docs/html
+.DS_Store
