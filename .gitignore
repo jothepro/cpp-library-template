@@ -2,3 +2,4 @@ VERSION
 build
 cmake-build-*
 .idea
+docs/html

@@ -3,9 +3,12 @@
 
 namespace MyLibrary {
 
+/**
+ * Example class
+ */
 class Example {
 public:
-    std::string test();
+    std::string test(const std::string& test);
 };
 
 }

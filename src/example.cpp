@@ -4,7 +4,7 @@
 using namespace MyLibrary;
 using json = nlohmann::json;
 
-std::string Example::test() {
-    json testJson = {{"hello", "world!"}};
+std::string Example::test(const std::string& test) {
+    json testJson = {{"hello", test}};
     return testJson.dump(4);
 }
