@@ -50,8 +50,8 @@
     }
 
     #doc-content {
-        height: 100vh !important;
-        padding-bottom: 50px;
+        height: calc(100vh - 28px) !important;
+        padding-bottom: calc(3 * var(--spacing-large));
         padding-top: calc(var(--top-height) - 80px);
         box-sizing: border-box;
     }
