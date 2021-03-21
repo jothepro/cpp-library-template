@@ -25,6 +25,24 @@
 var NAVTREE =
 [
   [ "C++ Library Template", "index.html", [
+    [ "Installation", "index.html#autotoc_md1", [
+      [ "Conan", "index.html#autotoc_md2", null ]
+    ] ],
+    [ "Development", "index.html#autotoc_md3", [
+      [ "Build Requirements", "index.html#autotoc_md4", null ],
+      [ "Build", "index.html#autotoc_md5", null ],
+      [ "Test", "index.html#autotoc_md6", null ],
+      [ "Documentation", "index.html#autotoc_md7", null ],
+      [ "CI/CD", "index.html#autotoc_md8", null ]
+    ] ],
+    [ "File Structure", "index.html#autotoc_md9", null ],
+    [ "Credits", "index.html#autotoc_md10", null ],
+    [ "Example Page", "page1.html", [
+      [ "An example section", "page1.html#sec", [
+        [ "The first subsection", "page1.html#subsection1", null ],
+        [ "The second subsection", "page1.html#subsection2", null ]
+      ] ]
+    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ]
     ] ],

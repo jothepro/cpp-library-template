@@ -9,6 +9,7 @@
     /* page base colors */
     --page-background-color: white;
     --page-foreground-color: #2c3e50;
+    --page-secondary-foreground-color: #67727e;
 
     /* color for all separators on the website: hr, borders, ... */
     --separator-color: #dedede;
@@ -18,7 +19,7 @@
     --border-radius-small: 4px;
     --border-radius-medium: 6px;
 
-    /* default spacings. Most compontest reference these values for spacing, to provide uniform spacing on the page */
+    /* default spacings. Most compontest reference these values for spacing, to provide uniform spacing on the page. */
     --spacing-small: 5px;
     --spacing-medium: 10px;
     --spacing-large: 16px;
@@ -41,6 +42,7 @@
 
     /* content text properties. These only affect the page content, not the navigation or any other ui elements */
     --content-line-height: 27px;
+    /* The content is centered and constraint in it's width. To make the content fill the whole page, set the variable to auto.*/
     --content-maxwidth: 900px;
 
     /* colors for various content boxes: @warning, @note, @deprecated @bug */
@@ -126,6 +128,7 @@
 
         --page-background-color: #1C1D1F;
         --page-foreground-color: #d2dbde;
+        --page-secondary-foreground-color: #859399;
         --separator-color: #000000;
         --side-nav-background: #252628;
 
@@ -164,13 +167,14 @@ body, table, div, p, dl, #nav-tree .label, .title, .sm-dox a, .sm-dox a:hover, .
 h1, h2, h3, h4, h5 {
     margin-top: .9em;
     font-weight: 600;
+    line-height: initial;
 }
 
 p, div, table, dl {
     font-size: var(--page-font-size);
 }
 
-a {
+a, a.el:visited, a.el:hover, a.el:focus, a.el:active {
     color: var(--primary-dark-color);
 }
 
@@ -531,6 +535,7 @@ iframe#MSearchResults {
 }
 
 .arrow {
+    color: var(--primary-light-color);
     font-family: serif;
     height: auto;
     text-align: right;
@@ -584,14 +589,14 @@ div.headertitle {
 div.header .title {
     font-weight: 600;
     font-size: 210%;
-    padding: var(--spacing-medium);
+    padding: var(--spacing-medium) var(--spacing-large);
 }
 
 div.header .summary {
     width: auto;
     display: block;
     float: none;
-    padding: 0 var(--spacing-medium);
+    padding: 0 var(--spacing-large);
 }
 
 td.memSeparator {
@@ -600,6 +605,10 @@ td.memSeparator {
 
 .mdescLeft, .mdescRight, .memItemLeft, .memItemRight, .memTemplItemLeft, .memTemplItemRight, .memTemplParams {
     background: var(--code-background);
+}
+
+.mdescRight {
+    color: var(--page-secondary-foreground-color);
 }
 
 span.mlabel {
@@ -611,11 +620,21 @@ span.mlabel {
 }
 
 div.contents {
-    padding: 0 var(--spacing-medium);
+    padding: 0 var(--spacing-large);
 }
 
 div.contents p, div.contents li {
     line-height: var(--content-line-height);
+}
+
+div.contents div.dyncontent {
+    margin: var(--spacing-medium) 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    div.contents div.dyncontent img {
+        filter: hue-rotate(180deg) invert();
+    }
 }
 
 h2.groupheader {
@@ -647,10 +666,63 @@ blockquote p {
 }
 
 /*
+toc
+ */
+
+
+
+div.toc {
+    background-color: var(--side-nav-background);
+    border: 1px solid var(--separator-color);
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--box-shadow);
+    padding: 0 var(--spacing-large);
+    margin: 0 0 var(--spacing-medium) var(--spacing-medium);
+}
+
+div.toc h3 {
+    color: var(--side-nav-foreground);
+    font-size: var(--navigation-font-size);
+    margin: var(--spacing-large) 0;
+}
+
+div.toc li {
+    font-size: var(--navigation-font-size);
+    padding: 0;
+    background: none;
+}
+
+div.toc li:before {
+    content: '↓';
+    font-weight: 800;
+    font-family: var(--font-family);
+    margin-right: var(--spacing-small);
+    color: var(--side-nav-foreground);
+    opacity: .4;
+}
+
+div.toc ul li.level1 {
+    margin: 0;
+}
+
+div.toc ul li.level2, div.toc ul li.level3 {
+    margin-top: 0;
+}
+
+
+@media screen and (max-width: 767px) {
+    div.toc {
+        float: none;
+        width: auto;
+        margin: 0 0 var(--spacing-medium) 0;
+    }
+}
+
+/*
 code & fragment
  */
 
-code, div.fragment {
+code, div.fragment, pre.fragment {
     border-radius: var(--border-radius-small);
     border: none;
     overflow: hidden;
@@ -663,14 +735,14 @@ code {
     padding: 2px 6px;
 }
 
-div.fragment {
+div.fragment, pre.fragment {
     margin: var(--spacing-medium) 0;
     padding: 14px 16px;
     background: var(--fragment-background);
     color: var(--fragment-foreground);
 }
 
-code, code a, div.fragment, div.fragment .line, div.fragment span {
+code, code a, div.fragment, pre.fragment, div.fragment .line, div.fragment span {
     font-family: var(--font-family-monospace);
     font-size: var(--code-font-size);
     line-height: inherit;
@@ -890,8 +962,15 @@ dl.reflist dd {
 table
  */
 
-table.markdownTable {
+table.markdownTable, table.fieldtable {
     width: 100%;
+    border: 1px solid var(--separator-color);
+    margin: var(--spacing-medium) 0;
+}
+
+table.fieldtable {
+    box-shadow: none;
+    border-radius: var(--border-radius-small);
 }
 
 th.markdownTableHeadLeft, th.markdownTableHeadRight, th.markdownTableHeadCenter, th.markdownTableHeadNone {
@@ -900,10 +979,34 @@ th.markdownTableHeadLeft, th.markdownTableHeadRight, th.markdownTableHeadCenter,
     font-weight: 600;
 }
 
-table.markdownTable td, table.markdownTable th {
+table.markdownTable td, table.markdownTable th, table.fieldtable dt {
     border: 1px solid var(--separator-color);
-    padding: var(--spacing-small) var(--spacing-medium) ;
+    padding: var(--spacing-small) var(--spacing-medium);
 }
+
+table.fieldtable th {
+    font-size: var(--page-font-size);
+    font-weight: 600;
+    background-image: none;
+    background-color: var(--tablehead-background);
+    color: var(--tablehead-foreground);
+    border-bottom: 1px solid var(--separator-color);
+}
+
+.fieldtable td.fieldtype, .fieldtable td.fieldname {
+    border-bottom: 1px solid var(--separator-color);
+    border-right: 1px solid var(--separator-color);
+}
+
+.fieldtable td.fielddoc {
+    border-bottom: 1px solid var(--separator-color);
+}
+
+.memberdecls td.glow, .fieldtable tr.glow {
+    background-color: var(--primary-light-color);
+    box-shadow: 0 0 15px var(--primary-lighter-color);
+}
+
 
 /*
 hr
@@ -966,6 +1069,16 @@ table.directory {
     margin-bottom: 0;
 }
 
+.icondoc {
+    filter: saturate(0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+    .iconfopen, .iconfclosed {
+        filter: hue-rotate(180deg) invert();
+    }
+}
+
 
 /*
   footer / nav-path
@@ -986,6 +1099,10 @@ table.directory {
 
 img.footer {
     width: 60px;
+}
+
+.navpath li.footer {
+    color: var(--page-secondary-foreground-color);
 }
 
 address.footer {
@@ -1042,4 +1159,8 @@ li.navelem:first-child:before {
     #nav-path li.navelem:after {
         text-shadow: 3px 0 0 var(--separator-color), 8px 0 6px rgba(0,0,0,0.4);
     }
+}
+
+.navpath li.navelem a:hover {
+    color: var(--primary-color);
 }

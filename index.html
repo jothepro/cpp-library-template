@@ -1,43 +1,59 @@
+<!-- HTML header for doxygen 1.9.1-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.9.1"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>C++ Library Template: C++ Library Template</title>
-<link href="tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <meta name="generator" content="Doxygen 1.9.1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Library Template" />
+    <meta property="og:description" content="A basic C++ library project template utilizing CMake and Conan." />
+    <meta property="og:url" content="https://jothepro.github.io/cpp-library-template/" />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta name="twitter:title" content="C++ Library Template" />
+    <meta name="twitter:description" content="A basic C++ library project template utilizing CMake and Conan." />
+    <!-- END twitter metadata -->
+    <title>C++ Library Template: C++ Library Template</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css"/>
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg">
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/jothepro/cpp-library-template" class="github-corner" title="View source on GitHub">
+    <svg viewBox="0 0 250 250" style="position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
-<div id="titlearea">
-<table cellspacing="0" cellpadding="0">
- <tbody>
- <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="logo.drawio.svg"/></td>
-  <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">C++ Library Template
-   &#160;<span id="projectnumber">v0.1.7</span>
-   </div>
-   <div id="projectbrief">using cmake and conan</div>
-  </td>
- </tr>
- </tbody>
-</table>
-</div>
-<!-- end header part -->
+    <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr style="height: 56px;">
+                <td id="projectlogo"><img alt="Logo" src="logo.drawio.svg"/></td>
+                <td id="projectalign" style="padding-left: 0.5em;">
+                    <div id="projectname">C++ Library Template
+                        &#160;<span id="projectnumber">v0.1.8</span>
+                    </div>
+                    <div id="projectbrief">Utilizing CMake and Conan</div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- end header part -->
 <!-- Generated by Doxygen 1.9.1 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
@@ -90,35 +106,110 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="title">C++ Library Template </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a> <img src="https://img.shields.io/github/v/release/jothepro/cmake-conan-library-template" alt="GitHub release (latest by date)" class="inline"/></p>
-<p>A basic C++ library project template using cmake and conan.</p>
-<h1>File Structure</h1>
+<div class="textblock"><p><a class="anchor" id="md_README"></a> <a href="https://github.com/jothepro/cmake-conan-library-template/releases/latest"><img src="https://img.shields.io/github/v/release/jothepro/cmake-conan-library-template" alt="GitHub release (latest by date)" class="inline"/></a> <a href="https://github.com/jothepro/cmake-conan-library-template/blob/main/LICENSE"><img src="https://img.shields.io/github/license/jothepro/cmake-conan-library-template" alt="GitHub" class="inline"/></a></p>
+<p>A basic <b>C++ library template</b> utilizing <a href="https://cmake.org/">CMake</a> and <a href="https://conan.io/">Conan</a>.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Installation</h1>
+<p>To use this library in you project, you can install it in the following ways:</p>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Conan</h2>
+<div class="fragment"><div class="line"># Add artifactory repository as remote:</div>
+<div class="line">conan remote add jothepro-conan-public https://jothepro.jfrog.io/artifactory/api/conan/conan-public</div>
+<div class="line"># Install `mylibrary`</div>
+<div class="line">conan install --remote jothepro-conan-public mylibrary/0.1.7@jothepro/stable --update</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md3"></a>
+Development</h1>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Build Requirements</h2>
+<ul>
+<li>Conan &gt;= 1.30</li>
+<li>CMake &gt;= 3.15</li>
+<li>Doxygen 1.9.1 (optional)</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Build</h2>
+<ul>
+<li><b>Commandline</b>:<ol type="1">
+<li><b>Create build folder</b> for out-of-source build: <code>mkdir build &amp;&amp; cd build</code></li>
+<li><b>Dependencies</b> are installed with Conan: <code>conan install ..</code></li>
+<li><b>Build</b> can also be triggered with Conan: <code>conan build ..</code>. This will configure, build and test the project.</li>
+</ol>
+</li>
+<li><b>Clion</b>: Install the <a href="https://plugins.jetbrains.com/plugin/11956-conan">Conan Plugin</a> before configuring &amp; building the project as usual.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Test</h2>
+<p>This template uses <a href="https://github.com/catchorg/Catch2">Catch2</a> for tesing. The Unit-tests are defined in <code>test</code>.</p>
+<ul>
+<li><b>Commandline</b>: To run just the unit-tests, you can run <code>conan build .. --test</code>.</li>
+<li><b>CLion</b>: Execute the <code>MyLibraryTest</code> target</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Documentation</h2>
+<p>This template uses <a href="https://www.doxygen.nl/index.html">Doxygen</a> for documenation.</p>
+<p>To generate the docs, run <code>doxygen Doxyfile</code> or execute the <code>doxygen</code> targe defined in the <code>CMakeLists.txt</code>.</p>
+<h2><a class="anchor" id="autotoc_md8"></a>
+CI/CD</h2>
+<p>This template uses <a href="https://github.com/features/actions">Github Actions</a> for automating the release of a new library version.</p>
+<ul>
+<li>The workflow <code>configureBuildTestCreateAndUpload.yaml</code> configures, builds, tests the library automatically on each push. When a new release is created in Github, the resulting artifact is automatically uploaded to <a href="https://jothepro.jfrog.io/ui/repos/tree/General/conan-public%2F_%2Fmylibrary">a public artifactory repository</a></li>
+<li>The workflow <code>publish-pages.yaml</code> automatically builds and publishes the documentation to <a href="https://jothepro.github.io/cpp-library-template/">Github Pages</a> when a new release is created in Github.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md9"></a>
+File Structure</h1>
 <div class="fragment"><div class="line">.</div>
-<div class="line">├── CMakeLists.txt</div>
-<div class="line">├── Doxyfile</div>
-<div class="line">├── LICENSE</div>
-<div class="line">├── README.md</div>
-<div class="line">├── VERSION</div>
-<div class="line">├── conanfile.py</div>
-<div class="line">├── docs</div>
-<div class="line">│   ├── doxygen-awesome-css</div>
+<div class="line">├── CMakeLists.txt (1)</div>
+<div class="line">├── Doxyfile (2)</div>
+<div class="line">├── LICENSE (3)</div>
+<div class="line">├── README.md (4)</div>
+<div class="line">├── conanfile.py (5)</div>
+<div class="line">├── docs (6)</div>
+<div class="line">│   ├── doxygen-awesome-css (7)</div>
+<div class="line">│   ├── doxygen-custom (8)</div>
 <div class="line">│   │   └── ...</div>
-<div class="line">│   └── img</div>
+<div class="line">│   ├── example-page.dox (9)</div>
+<div class="line">│   └── img (10)</div>
 <div class="line">│       └── ...</div>
-<div class="line">├── src</div>
-<div class="line">│   ├── CMakeLists.txt</div>
-<div class="line">│   ├── example.cpp</div>
-<div class="line">│   └── include</div>
-<div class="line">│       └── MyLibrary</div>
-<div class="line">│           └── example.hpp</div>
-<div class="line">├── test</div>
-<div class="line">│   ├── CMakeLists.txt</div>
-<div class="line">│   └── mylibrarytest.cpp</div>
-<div class="line">└── test_package</div>
-<div class="line">    ├── CMakeLists.txt</div>
-<div class="line">    ├── conanfile.py</div>
-<div class="line">    └── example.cpp</div>
-</div><!-- fragment --><h1>Credits</h1>
+<div class="line">├── src (11)</div>
+<div class="line">│   ├── CMakeLists.txt (12)</div>
+<div class="line">│   ├── example.cpp (13)</div>
+<div class="line">│   └── include (14)</div>
+<div class="line">│       └── MyLibrary (15)</div>
+<div class="line">│           └── example.hpp (16)</div>
+<div class="line">├── test (17)</div>
+<div class="line">│   ├── CMakeLists.txt (18)</div>
+<div class="line">│   └── mylibrarytest.cpp (19)</div>
+<div class="line">└── test_package (20)</div>
+<div class="line">    ├── CMakeLists.txt (21)</div>
+<div class="line">    ├── conanfile.py (22)</div>
+<div class="line">    └── example.cpp (23)</div>
+</div><!-- fragment --><ol type="1">
+<li>Root CMakeLists.txt. Includes Library Sources (11) and unit tests (18).</li>
+<li>Doxyfile for documentation generation. <code>CMakeLists.txt</code> (1) defines a target <code>doxygen</code> to build the documentation.</li>
+<li>License file.</li>
+<li>The Readme you currently read.</li>
+<li>Conanfile. Used to install dependencies &amp; publishing the package.</li>
+<li>Documentation subdirectory. Generated docs will pe placed under <code>docs/html</code>.</li>
+<li>Submodule containing the custom-css for doxygen.</li>
+<li>Project-specific doxygen customizations.</li>
+<li>Example documentation file. All <code>.dox</code> files in this dir will be automatically included in the documentation.</li>
+<li>Images for documentation.</li>
+<li>Library sources folder.</li>
+<li><code>CMakeLists.txt</code> for library.</li>
+<li>private source file.</li>
+<li>public headers folder.</li>
+<li>library namespace.</li>
+<li>public header file.</li>
+<li>Unit tests folder.</li>
+<li><code>CMakeLists.txt</code> that defines unit tests.</li>
+<li>Example unit test file.</li>
+<li>Conan linking test directory.</li>
+<li>CMakeLists.txt that defines an example project that links the library.</li>
+<li>Conanfile that defines linking test.</li>
+<li>Example sources that require the library to build &amp; run successfully.</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md10"></a>
+Credits</h1>
 <p>This template is inspired by these CppCon Talks:</p>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=bsXLMQ6WgIk">C++Now 2017: Daniel Pfeifer “Effective CMake"</a></li>
