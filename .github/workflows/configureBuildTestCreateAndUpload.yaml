@@ -33,7 +33,7 @@ jobs:
       if: github.event.release.prerelease
       run: conan create . jothepro/beta
     - name: configure, build, test and create project for stable channel
-      if: !github.event.release.prerelease
+      if: ${{ !github.event.release.prerelease }}
       run: conan create . jothepro/stable
     - name: upload to artifactory
       if: github.event_name == 'release'
