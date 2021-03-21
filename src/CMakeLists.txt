@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 
+project(MyLibrary)
+
 # dependencies
 find_package(nlohmann_json REQUIRED)
 
