@@ -1,3 +1,7 @@
+:root {
+    --side-nav-fixed-width: 370px;
+}
+
 .github-corner svg {
     fill: var(--primary-light-color);
     color: var(--page-background-color);
@@ -6,7 +10,7 @@
 }
 
 #projectnumber {
-    margin-right: 25px;
+    margin-right: 22px;
 }
 
 @media screen and (max-width: 767px) {
