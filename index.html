@@ -45,7 +45,7 @@
                 <td id="projectlogo"><img alt="Logo" src="logo.drawio.svg"/></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                     <div id="projectname">C++ Library Template
-                        &#160;<span id="projectnumber">v0.1.8</span>
+                        &#160;<span id="projectnumber">v0.1.0</span>
                     </div>
                     <div id="projectbrief">Utilizing CMake and Conan</div>
                 </td>
@@ -109,54 +109,66 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="textblock"><p><a class="anchor" id="md_README"></a> <a href="https://github.com/jothepro/cmake-conan-library-template/releases/latest"><img src="https://img.shields.io/github/v/release/jothepro/cmake-conan-library-template" alt="GitHub release (latest by date)" class="inline"/></a> <a href="https://github.com/jothepro/cmake-conan-library-template/blob/main/LICENSE"><img src="https://img.shields.io/github/license/jothepro/cmake-conan-library-template" alt="GitHub" class="inline"/></a></p>
 <p>A basic <b>C++ library template</b> utilizing <a href="https://cmake.org/">CMake</a> and <a href="https://conan.io/">Conan</a>.</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
+Features</h1>
+<ul>
+<li>🎣 Dependency management with <b>Conan</b></li>
+<li>🍭 Build configuration with <b>CMake</b></li>
+<li>🧩 Automatic publishing of artifacts to <b>Artifactory</b> with Github Actions</li>
+<li>📑 Automatic publishing of <b>Doxygen</b> documentation with Github Actions</li>
+<li>🚀 Preconfigured for Unit-Testing with <b>Catch2</b></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
 Installation</h1>
 <p>To use this library in you project, you can install it in the following ways:</p>
-<h2><a class="anchor" id="autotoc_md2"></a>
+<h2><a class="anchor" id="autotoc_md3"></a>
 Conan</h2>
 <div class="fragment"><div class="line"># Add artifactory repository as remote:</div>
 <div class="line">conan remote add jothepro-conan-public https://jothepro.jfrog.io/artifactory/api/conan/conan-public</div>
-<div class="line"># Install `mylibrary`</div>
-<div class="line">conan install --remote jothepro-conan-public mylibrary/0.1.7@jothepro/stable --update</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md3"></a>
+<div class="line"># Install  a release of `mylibrary`</div>
+<div class="line">conan install --remote jothepro-conan-public mylibrary/0.1.7@jothepro/stable</div>
+</div><!-- fragment --><p>If you don't want to build &amp; run tests when building from source, set the <a href="https://docs.conan.io/en/latest/reference/env_vars.html#conan-run-tests">CONAN_RUN_TESTS</a> variable: </p><div class="fragment"><div class="line">install --remote jothepro-conan-public mylibrary/0.1.7@jothepro/stable -e CONAN_RUN_TESTS=0</div>
+</div><!-- fragment --><p>Pre-Releases are available in the <code>beta</code> channel: </p><div class="fragment"><div class="line">conan install --remote jothepro-conan-public mylibrary/0.1.8@jothepro/beta</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
 Development</h1>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md5"></a>
 Build Requirements</h2>
 <ul>
 <li>Conan &gt;= 1.30</li>
 <li>CMake &gt;= 3.15</li>
 <li>Doxygen 1.9.1 (optional)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 Build</h2>
 <ul>
-<li><b>Commandline</b>:<ol type="1">
-<li><b>Create build folder</b> for out-of-source build: <code>mkdir build &amp;&amp; cd build</code></li>
-<li><b>Dependencies</b> are installed with Conan: <code>conan install ..</code></li>
-<li><b>Build</b> can also be triggered with Conan: <code>conan build ..</code>. This will configure, build and test the project.</li>
-</ol>
-</li>
+<li><b>Commandline</b>: <div class="fragment"><div class="line"># Create build folder for out-of-source build</div>
+<div class="line">mkdir build &amp;&amp; cd build</div>
+<div class="line"># Install Dependencies with Conan</div>
+<div class="line">conan install ..</div>
+<div class="line"># Configure, Build &amp; Test</div>
+<div class="line">conan build ..</div>
+</div><!-- fragment --></li>
 <li><b>Clion</b>: Install the <a href="https://plugins.jetbrains.com/plugin/11956-conan">Conan Plugin</a> before configuring &amp; building the project as usual.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 Test</h2>
-<p>This template uses <a href="https://github.com/catchorg/Catch2">Catch2</a> for tesing. The Unit-tests are defined in <code>test</code>.</p>
+<p>This template uses <a href="https://github.com/catchorg/Catch2">Catch2</a> for testing. The Unit-tests are defined in <code>test</code>.</p>
 <ul>
 <li><b>Commandline</b>: To run just the unit-tests, you can run <code>conan build .. --test</code>.</li>
 <li><b>CLion</b>: Execute the <code>MyLibraryTest</code> target</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 Documentation</h2>
 <p>This template uses <a href="https://www.doxygen.nl/index.html">Doxygen</a> for documenation.</p>
-<p>To generate the docs, run <code>doxygen Doxyfile</code> or execute the <code>doxygen</code> targe defined in the <code>CMakeLists.txt</code>.</p>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<p>To generate the docs, run <code>doxygen Doxyfile</code> or execute the <code>doxygen</code> target defined in the <code>CMakeLists.txt</code>.</p>
+<h2><a class="anchor" id="autotoc_md9"></a>
 CI/CD</h2>
 <p>This template uses <a href="https://github.com/features/actions">Github Actions</a> for automating the release of a new library version.</p>
 <ul>
 <li>The workflow <code>configureBuildTestCreateAndUpload.yaml</code> configures, builds, tests the library automatically on each push. When a new release is created in Github, the resulting artifact is automatically uploaded to <a href="https://jothepro.jfrog.io/ui/repos/tree/General/conan-public%2F_%2Fmylibrary">a public artifactory repository</a></li>
 <li>The workflow <code>publish-pages.yaml</code> automatically builds and publishes the documentation to <a href="https://jothepro.github.io/cpp-library-template/">Github Pages</a> when a new release is created in Github.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md9"></a>
-File Structure</h1>
+<h1><a class="anchor" id="autotoc_md10"></a>
+Directory Structure</h1>
 <div class="fragment"><div class="line">.</div>
 <div class="line">├── CMakeLists.txt (1)</div>
 <div class="line">├── Doxyfile (2)</div>
@@ -184,7 +196,7 @@ File Structure</h1>
 <div class="line">    ├── conanfile.py (22)</div>
 <div class="line">    └── example.cpp (23)</div>
 </div><!-- fragment --><ol type="1">
-<li>Root CMakeLists.txt. Includes Library Sources (11) and unit tests (18).</li>
+<li>Root <code>CMakeLists.txt</code>. Includes Library Sources (11) and unit tests (18).</li>
 <li>Doxyfile for documentation generation. <code>CMakeLists.txt</code> (1) defines a target <code>doxygen</code> to build the documentation.</li>
 <li>License file.</li>
 <li>The Readme you currently read.</li>
@@ -196,10 +208,10 @@ File Structure</h1>
 <li>Images for documentation.</li>
 <li>Library sources folder.</li>
 <li><code>CMakeLists.txt</code> for library.</li>
-<li>private source file.</li>
-<li>public headers folder.</li>
-<li>library namespace.</li>
-<li>public header file.</li>
+<li>Private source file.</li>
+<li>Public headers folder.</li>
+<li>Library namespace.</li>
+<li>Public header file example.</li>
 <li>Unit tests folder.</li>
 <li><code>CMakeLists.txt</code> that defines unit tests.</li>
 <li>Example unit test file.</li>
@@ -208,9 +220,9 @@ File Structure</h1>
 <li>Conanfile that defines linking test.</li>
 <li>Example sources that require the library to build &amp; run successfully.</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 Credits</h1>
-<p>This template is inspired by these CppCon Talks:</p>
+<p>This template is inspired by these talks:</p>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=bsXLMQ6WgIk">C++Now 2017: Daniel Pfeifer “Effective CMake"</a></li>
 <li><a href="https://www.youtube.com/watch?v=S4QSKLXdTtA">CppCon 2018: Mateusz Pusz “Git, CMake, Conan - How to ship and reuse our C++ projects”</a> </li>
