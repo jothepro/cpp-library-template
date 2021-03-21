@@ -22,9 +22,17 @@ To use this library in you project, you can install it in the following ways:
 # Add artifactory repository as remote:
 conan remote add jothepro-conan-public https://jothepro.jfrog.io/artifactory/api/conan/conan-public
 # Install  a release of `mylibrary`
-conan install --remote jothepro-conan-public mylibrary/0.1.7@jothepro/stable --update
-# Pre-Releases are available in the `beta` channel
-conan install --remote jothepro-conan-public mylibrary/0.1.8@jothepro/beta --update
+conan install --remote jothepro-conan-public mylibrary/0.1.7@jothepro/stable
+```
+
+If you don't want to build & run tests when building from source, set the [CONAN_RUN_TESTS](https://docs.conan.io/en/latest/reference/env_vars.html#conan-run-tests) variable:
+```sh
+install --remote jothepro-conan-public mylibrary/0.1.7@jothepro/stable -e CONAN_RUN_TESTS=0
+```
+
+Pre-Releases are available in the `beta` channel:
+```sh
+conan install --remote jothepro-conan-public mylibrary/0.1.8@jothepro/beta
 ```
    
 
@@ -102,7 +110,7 @@ This template uses [Github Actions](https://github.com/features/actions) for aut
 
 ```
 
-1. Root CMakeLists.txt. Includes Library Sources (11) and unit tests (18).
+1. Root `CMakeLists.txt`. Includes Library Sources (11) and unit tests (18).
 2. Doxyfile for documentation generation. `CMakeLists.txt` (1) defines a target `doxygen` to build the documentation.
 3. License file.
 4. The Readme you currently read.

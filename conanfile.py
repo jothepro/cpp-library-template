@@ -37,9 +37,12 @@ class MyLibraryConan(ConanFile):
 
     def build(self):
         cmake = CMake(self)
+        if not tools.get_env("CONAN_RUN_TESTS", True):
+            cmake.definitions["BUILD_TESTING"] = "OFF"
         cmake.configure()
         cmake.build()
-        cmake.test()
+        if tools.get_env("CONAN_RUN_TESTS", True):
+            cmake.test()
         cmake.install()
 
     def package_info(self):

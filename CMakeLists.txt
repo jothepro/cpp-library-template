@@ -25,7 +25,7 @@ endif(DOXYGEN_FOUND)
 add_subdirectory(src)
 
 include(CTest)
-set(CMAKE_CTEST_ARGUMENTS "--verbose")
 if(BUILD_TESTING)
+    set(CMAKE_CTEST_ARGUMENTS "--verbose")
     add_subdirectory(test)
 endif()
