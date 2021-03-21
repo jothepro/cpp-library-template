@@ -26,6 +26,9 @@ jobs:
       run: conan remote add jothepro-conan-public https://jothepro.jfrog.io/artifactory/api/conan/conan-public
     - name: Install dependencies
       run: conan install .
+    - name: configure, build and test project
+      if: !github.event_name == 'release'
+      run: conan build .
     - name: configure, build, test and create project for beta channel
       if: github.event.release.prerelease
       run: conan create . jothepro/beta
