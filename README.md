@@ -13,8 +13,10 @@ To use this library in you project, you can install it in the following ways:
 ```bash
 # Add artifactory repository as remote:
 conan remote add jothepro-conan-public https://jothepro.jfrog.io/artifactory/api/conan/conan-public
-# Install `mylibrary`
+# Install  a release of `mylibrary`
 conan install --remote jothepro-conan-public mylibrary/0.1.7@jothepro/stable --update
+# Pre-Releases are available in the `beta` channel
+conan install --remote jothepro-conan-public mylibrary/0.1.8@jothepro/beta --update
 ```
    
 
