@@ -51,7 +51,7 @@ conan install --remote jothepro-conan-public mylibrary/0.1.8@jothepro/beta --upd
 
 ### Test
 
-This template uses [Catch2](https://github.com/catchorg/Catch2) for tesing. The Unit-tests are defined in `test`.
+This template uses [Catch2](https://github.com/catchorg/Catch2) for testing. The Unit-tests are defined in `test`.
 
 - **Commandline**: To run just the unit-tests, you can run `conan build .. --test`.
 - **CLion**: Execute the `MyLibraryTest` target
@@ -60,7 +60,7 @@ This template uses [Catch2](https://github.com/catchorg/Catch2) for tesing. The 
 
 This template uses [Doxygen](https://www.doxygen.nl/index.html) for documenation.
 
-To generate the docs, run `doxygen Doxyfile` or execute the `doxygen` targe defined in the `CMakeLists.txt`.
+To generate the docs, run `doxygen Doxyfile` or execute the `doxygen` target defined in the `CMakeLists.txt`.
 
 ### CI/CD
 
@@ -129,8 +129,8 @@ This template uses [Github Actions](https://github.com/features/actions) for aut
 
 ## Credits
 
-This template is inspired by these CppCon Talks:
+This template is inspired by these talks:
 
-- [C++Now 2017: Daniel Pfeifer “Effective CMake"](https://www.youtube.com/watch?v=bsXLMQ6WgIk) 
+- [C++Now 2017: Daniel Pfeifer “Effective CMake"](https://www.youtube.com/watch?v=bsXLMQ6WgIk)
   
 - [CppCon 2018: Mateusz Pusz “Git, CMake, Conan - How to ship and reuse our C++ projects”](https://www.youtube.com/watch?v=S4QSKLXdTtA)
