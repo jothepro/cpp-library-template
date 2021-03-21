@@ -5,12 +5,20 @@
 
 A basic **C++ library template** utilizing [CMake](https://cmake.org/) and [Conan](https://conan.io/).
 
+## Features
+
+- 🎣 Dependency management with **Conan**
+- 🍭 Build configuration with **CMake**
+- 🧩 Automatic publishing of artifacts to **Artifactory** with Github Actions
+- 📑 Automatic publishing of **Doxygen** documentation with Github Actions
+- 🚀 Preconfigured for Unit-Testing with **Catch2**
+
 ## Installation
 
 To use this library in you project, you can install it in the following ways:
 
 ### Conan
-```bash
+```sh
 # Add artifactory repository as remote:
 conan remote add jothepro-conan-public https://jothepro.jfrog.io/artifactory/api/conan/conan-public
 # Install  a release of `mylibrary`
@@ -31,9 +39,14 @@ conan install --remote jothepro-conan-public mylibrary/0.1.8@jothepro/beta --upd
 ### Build
 
 - **Commandline**:
-    1. **Create build folder** for out-of-source build: `mkdir build && cd build`
-    2. **Dependencies** are installed with Conan: `conan install ..`
-    3. **Build** can also be triggered with Conan: `conan build ..`. This will configure, build and test the project.
+  ```sh
+  # Create build folder for out-of-source build
+  mkdir build && cd build
+  # Install Dependencies with Conan
+  conan install ..
+  # Configure, Build & Test
+  conan build ..
+  ```
 - **Clion**: Install the [Conan Plugin](https://plugins.jetbrains.com/plugin/11956-conan) before configuring & building the project as usual.
 
 ### Test
@@ -57,7 +70,7 @@ This template uses [Github Actions](https://github.com/features/actions) for aut
   When a new release is created in Github, the resulting artifact is automatically uploaded to [a public  artifactory repository](https://jothepro.jfrog.io/ui/repos/tree/General/conan-public%2F_%2Fmylibrary)
 - The workflow `publish-pages.yaml` automatically builds and publishes the documentation to [Github Pages](https://jothepro.github.io/cpp-library-template/) when a new release is created in Github.
 
-## File Structure
+## Directory Structure
 
 ```
 .
@@ -101,10 +114,10 @@ This template uses [Github Actions](https://github.com/features/actions) for aut
 10. Images for documentation.
 11. Library sources folder.
 12. `CMakeLists.txt` for library.
-13. private source file.
-14. public headers folder.
-15. library namespace.
-16. public header file.
+13. Private source file.
+14. Public headers folder.
+15. Library namespace.
+16. Public header file example.
 17. Unit tests folder.
 18. `CMakeLists.txt` that defines unit tests.
 19. Example unit test file.
