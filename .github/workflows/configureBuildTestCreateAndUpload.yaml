@@ -27,7 +27,7 @@ jobs:
     - name: Install dependencies
       run: conan install .
     - name: configure, build and test project
-      if: !github.event_name == 'release'
+      if: github.event_name != 'release'
       run: conan build .
     - name: configure, build, test and create project for beta channel
       if: github.event.release.prerelease
