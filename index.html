@@ -45,7 +45,7 @@
                 <td id="projectlogo"><img alt="Logo" src="logo.drawio.svg"/></td>
                 <td id="projectalign" style="padding-left: 0.5em;">
                     <div id="projectname">C++ Library Template
-                        &#160;<span id="projectnumber">v0.1.0</span>
+                        &#160;<span id="projectnumber">v0.2.0</span>
                     </div>
                     <div id="projectbrief">Utilizing CMake and Conan</div>
                 </td>
@@ -182,19 +182,20 @@ Directory Structure</h1>
 <div class="line">│   ├── example-page.dox (9)</div>
 <div class="line">│   └── img (10)</div>
 <div class="line">│       └── ...</div>
-<div class="line">├── src (11)</div>
+<div class="line">├── lib (11)</div>
 <div class="line">│   ├── CMakeLists.txt (12)</div>
-<div class="line">│   ├── example.cpp (13)</div>
-<div class="line">│   └── include (14)</div>
-<div class="line">│       └── MyLibrary (15)</div>
-<div class="line">│           └── example.hpp (16)</div>
-<div class="line">├── test (17)</div>
-<div class="line">│   ├── CMakeLists.txt (18)</div>
-<div class="line">│   └── mylibrarytest.cpp (19)</div>
-<div class="line">└── test_package (20)</div>
-<div class="line">    ├── CMakeLists.txt (21)</div>
-<div class="line">    ├── conanfile.py (22)</div>
-<div class="line">    └── example.cpp (23)</div>
+<div class="line">│   ├── src (13)</div>
+<div class="line">│   │   └── example.cpp (14)</div>
+<div class="line">│   └── include (15)</div>
+<div class="line">│       └── MyLibrary (16)</div>
+<div class="line">│           └── example.hpp (17)</div>
+<div class="line">├── test (18)</div>
+<div class="line">│   ├── CMakeLists.txt (19)</div>
+<div class="line">│   └── mylibrarytest.cpp (20)</div>
+<div class="line">└── test_package (21)</div>
+<div class="line">    ├── CMakeLists.txt (22)</div>
+<div class="line">    ├── conanfile.py (23)</div>
+<div class="line">    └── example.cpp (24)</div>
 </div><!-- fragment --><ol type="1">
 <li>Root <code>CMakeLists.txt</code>. Includes Library Sources (11) and unit tests (18).</li>
 <li>Doxyfile for documentation generation. <code>CMakeLists.txt</code> (1) defines a target <code>doxygen</code> to build the documentation.</li>
@@ -208,6 +209,7 @@ Directory Structure</h1>
 <li>Images for documentation.</li>
 <li>Library sources folder.</li>
 <li><code>CMakeLists.txt</code> for library.</li>
+<li>Source files folder.</li>
 <li>Private source file.</li>
 <li>Public headers folder.</li>
 <li>Library namespace.</li>
