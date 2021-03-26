@@ -7,7 +7,7 @@ find_package(nlohmann_json REQUIRED)
 
 # library definition
 add_library(MyLibrary
-    example.cpp
+    src/example.cpp
     include/MyLibrary/example.hpp)
 target_compile_features(MyLibrary PUBLIC cxx_std_17)
 target_include_directories(MyLibrary

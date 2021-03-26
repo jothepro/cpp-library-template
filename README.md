@@ -94,19 +94,20 @@ This template uses [Github Actions](https://github.com/features/actions) for aut
 │   ├── example-page.dox (9)
 │   └── img (10)
 │       └── ...
-├── src (11)
+├── lib (11)
 │   ├── CMakeLists.txt (12)
-│   ├── example.cpp (13)
-│   └── include (14)
-│       └── MyLibrary (15)
-│           └── example.hpp (16)
-├── test (17)
-│   ├── CMakeLists.txt (18)
-│   └── mylibrarytest.cpp (19)
-└── test_package (20)
-    ├── CMakeLists.txt (21)
-    ├── conanfile.py (22)
-    └── example.cpp (23)
+│   ├── src (13)
+│   │   └── example.cpp (14)
+│   └── include (15)
+│       └── MyLibrary (16)
+│           └── example.hpp (17)
+├── test (18)
+│   ├── CMakeLists.txt (19)
+│   └── mylibrarytest.cpp (20)
+└── test_package (21)
+    ├── CMakeLists.txt (22)
+    ├── conanfile.py (23)
+    └── example.cpp (24)
 
 ```
 
@@ -122,17 +123,18 @@ This template uses [Github Actions](https://github.com/features/actions) for aut
 10. Images for documentation.
 11. Library sources folder.
 12. `CMakeLists.txt` for library.
-13. Private source file.
-14. Public headers folder.
-15. Library namespace.
-16. Public header file example.
-17. Unit tests folder.
-18. `CMakeLists.txt` that defines unit tests.
-19. Example unit test file.
-20. Conan linking test directory.
-21. CMakeLists.txt that defines an example project that links the library.
-22. Conanfile that defines linking test.
-23. Example sources that require the library to build & run successfully.
+13. Source files folder.
+14. Private source file.
+15. Public headers folder.
+16. Library namespace.
+17. Public header file example.
+18. Unit tests folder.
+19. `CMakeLists.txt` that defines unit tests.
+20. Example unit test file.
+21. Conan linking test directory.
+22. CMakeLists.txt that defines an example project that links the library.
+23. Conanfile that defines linking test.
+24. Example sources that require the library to build & run successfully.
 
 
 ## Credits

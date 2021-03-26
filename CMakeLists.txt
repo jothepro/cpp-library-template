@@ -22,7 +22,7 @@ if(DOXYGEN_FOUND)
     )
 endif(DOXYGEN_FOUND)
 
-add_subdirectory(src)
+add_subdirectory(lib)
 
 include(CTest)
 if(BUILD_TESTING)
